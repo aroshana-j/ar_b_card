@@ -29,19 +29,19 @@
 
       <a-entity mindar-image-target="targetIndex: 0">
         
-        <a-gltf-model src="#cardModel" 
-                      scale="6 6 6" 
-                      rotation="90 0 0"
-                      position="0 0 0.1" 
-                      animation__spin="property: rotation; from: 90 0 0; to: 90 0 360; loop: true; dur: 5000; easing: linear"
-                      animation-mixer>
-        </a-gltf-model>
+        <a-entity animation="property: rotation; to: 0 0 360; loop: true; dur: 5000; easing: linear">
+          
+          <a-gltf-model src="#cardModel" 
+                        scale="6 6 6" 
+                        rotation="90 0 0"
+                        position="0 0 0.1" 
+                        animation-mixer>
+          </a-gltf-model>
+          
+        </a-entity>
         
       </a-entity>
       
     </a-scene>
   </body>
 </html>
-
-
-
