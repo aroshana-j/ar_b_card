@@ -7,6 +7,11 @@
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
+    <style>
+      .a-enter-vr {
+        display: none !important;
+      }
+    </style>
   </head>
   <body>
     <a-scene mindar-image="imageTargetSrc: ./assets/card.mind;" 
@@ -22,10 +27,18 @@
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
       <a-entity mindar-image-target="targetIndex: 0">
-        <a-gltf-model rotation="0 0 0" 
-                      position="0 0 0.5" 
-                      scale="0.5 0.5 0.5" 
+
+        <a-text value="Happy Birthday!" 
+                color="#FF6B6B" 
+                align="center" 
+                position="0 0.8 0.1" 
+                scale="1 1 1">
+        </a-text>
+        
+        <a-gltf-model scale="0.5 0.5 0.5" 
                       src="#cardModel" 
+                      animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+                      animation="property: position; to: 0 0.2 0.1; dir: alternate; loop: true; dur: 2000; easing: easeInOutSine"
                       animation-mixer>
         </a-gltf-model>
       </a-entity>
